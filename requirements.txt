@@ -16,6 +16,5 @@ MarkupSafe
 num2words
 Pillow
 python-docx
-pywin32
 six
 tqdm
