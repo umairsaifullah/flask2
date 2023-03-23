@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, send_file ,Response
 import docx
+import time
+import subprocess
 from docx.enum.text import WD_LINE_SPACING
 from docx.shared import Pt
 from docx2pdf import convert
@@ -61,8 +63,10 @@ def submit():
     doc.save('test_filled.docx')
 
     print('Converting to PDF...')
-    convert("test_filled.docx")
-    print('Conversion completed.')
+   
+    command = 'convertword test_filled.docx test_filled.pdf'
+    subprocess.run(command, shell=True)
+    time.sleep(5)
     filename = 'test_filled.pdf'
     
     
