@@ -63,8 +63,17 @@ def submit():
 
     print('Converting to PDF...')
    
-    command = 'convertword test_filled.docx test_filled.pdf'
-    subprocess.run(command, shell=True)
+    def generate_pdf(doc_path, path):
+
+    subprocess.call(['soffice',
+                 # '--headless',
+                 '--convert-to',
+                 'pdf',
+                 '--outdir',
+                 path,
+                 doc_path])
+    return doc_path
+    generate_pdf("test_filled.docx", "test_filled.pdf")
     filename = 'test_filled.pdf'
     
     
