@@ -69,12 +69,12 @@ def submit():
     # Open the generated pdf file
     # Open the input pdf file
     with open('test_filled.pdf', 'rb') as pdf_file:
-       pdf_reader = PyPDF2.PdfReader(pdf_file)
+      pdf_reader = PyPDF2.PdfReader(pdf_file)
       # Create a new pdf file to write the converted data
       with open('converted.pdf', 'wb') as new_pdf_file:
           pdf_writer = PyPDF2.PdfWriter()
-         # Iterate through each page of the pdf and add it to the new file
-           for page in range(len(pdf_reader.pages)):
+          # Iterate through each page of the pdf and add it to the new file
+          for page in range(len(pdf_reader.pages)):
                pdf_writer.add_page(pdf_reader.pages[page])
            # Write the new file
           pdf_writer.write(new_pdf_file)
