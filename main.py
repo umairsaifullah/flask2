@@ -65,14 +65,14 @@ def submit():
    
     def generate_pdf(doc_path, path):
 
-    subprocess.call(['soffice',
+        subprocess.call(['soffice',
                  # '--headless',
                  '--convert-to',
                  'pdf',
                  '--outdir',
                  path,
                  doc_path])
-    return doc_path
+        return doc_path
     generate_pdf("test_filled.docx", "test_filled.pdf")
     filename = 'test_filled.pdf'
     
