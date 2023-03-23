@@ -1,9 +1,141 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello World</title>
-  </head>
-  <body>
-    <h1>Hello World!</h1>
-  </body>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>FPSC Challan Form Generator</title>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
+	
+	<style>
+		form {
+		font-family: 'Oswald', sans-serif;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 50px auto;
+			padding: 20px;
+			background-color: #ffffff;
+			border: 1px solid #ccc;
+			border-radius: 10px;
+			max-width: 500px;
+		}
+
+		input[type="text"], input[type="number"]{
+		font-family: 'Oswald', sans-serif;
+			padding: 10px;
+			margin: 5px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			width: 100%;
+		}
+		
+
+		input[type="submit"] {
+		font-family: 'Oswald', sans-serif;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			padding: 10px;
+			margin-top: 20px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+		
+
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
+		
+		
+
+		body {
+  background-color: #eafced;
+}
+
+
+
+
+
+	</style>
+	
+	
+</head>
+<body>
+
+<div class="banner" style="background-image: url('https://www.fpsc.gov.pk/sites/all/themes/professional_theme/images/webmockup-fpsc.png');
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #173a22;
+  text-align: center;
+  font-size: 2rem;">
+   <h1 style="font-family: 'Oswald', sans-serif; font-weight: bold; font-size: 48px; height: auto"> 
+   <div class="banner-content" style="display: flex; align-items: center;">
+      <img src="https://www.fpsc.gov.pk/sites/default/files/NEW1.png" style="height: 100px; margin-right: 50px;">
+      <span>FPSC Challan Form Generator</span>
+    </div>
+   
+   </h1>
+
+</div>
+
+
+	 <form method="POST" action="/submit">
+
+ 	
+		<label for="Bankname">Bank's Name</label>
+		<input type="text" id="Bankname" name="Bankname" placeholder="Enter Bank Name" required>
+			
+		
+		<label for="Bankcode">Bank's Code</label>
+		<input type="text" id="Bankcode" name="Bankcode" placeholder="Enter Bank Branch Code" required>
+		<label for="District">District of Bank Branch</label>
+		<input type="text" id="District" name="District" placeholder="Enter Branch District" required>
+		<label for="name">Name of Candidate</label>
+		<input type="text" id="name" name="name" placeholder="Enter Your Full Name" required>
+		<label for="cnic">CNIC#</label>
+		<input type="text" id="cnic" name="cnic" placeholder="Enter Your CNIC#" required>
+		<label for="postapplied">Name of Post Applied For</label>
+		<input type="text" id="postapplied" name="postapplied" placeholder="Enter Name Of Post" required>
+		
+		<br>
+		<tr>
+        <div align="left" style="font-weight:400;font-size:13px">The Application Fee for posts (BS-14, 16 &amp; 17 = Rs. 300/-  BS 18= Rs. 750/-  BS-19 = Rs. 1200/-  BS-20 and above= Rs. 1500/-)<br><font color="black"><a href="https://www.fpsc.gov.pk/sites/default/files/FPSC-GR-Challan-28-02-2020.pdf" target="_blank">(Click here to Download Form for Fee Deposit)</a></font></div>
+         </tr>
+		<br>
+		
+		<label for="amount">Amount</label>
+		<input type="number" id="amount" name="amount" placeholder="Enter the Amount In PKR" required>
+	
+		<label for="case">Case#</label>
+		<input type="text" id="case" name="case" placeholder="Enter Case#" required>
+	
+
+	
+
+	
+
+	<input type="submit" value="Submit">
+</form>
+
+<br>
+<br>
+<footer style="
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 5px;" >
+  <img src="https://www.fpsc.gov.pk/sites/all/themes/professional_theme/images/footer-bg.png" alt="Image description" style="max-width: 100%;
+  height: auto;">
+</footer>
+
+
+</body>
 </html>
