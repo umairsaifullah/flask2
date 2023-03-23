@@ -3,7 +3,6 @@ import docx
 import subprocess
 from docx.enum.text import WD_LINE_SPACING
 from docx.shared import Pt
-from docx2pdf import convert
 from num2words import num2words
 import os
 
