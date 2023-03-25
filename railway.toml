@@ -4,13 +4,13 @@
   commands = [
   "apt-get update",
   "apt-get install -y libreoffice",
-  "apt install python3-pip python3-cffi python3-brotli libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0"
+  "sudo apt-get install -y libcairo2-dev libpango1.0-dev libgdk-pixbuf2.0-dev libffi-dev shared-mime-info"
 ]
   
 [build]
 builder = "NIXPACKS"
 # Install dependencies
-command = "apt-get update && apt-get install -y libreoffice python3-pip python3-cffi python3-brotli libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0"
+command = "apt-get update && apt-get install -y libreoffice libcairo2-dev libpango1.0-dev libgdk-pixbuf2.0-dev libffi-dev shared-mime-info"
 
 
 
@@ -21,4 +21,4 @@ restartPolicyMaxRetries = 10
 [[services]]
   internal_port = 6302
   protocol = "http"
-  command = "apt install python3-pip python3-cffi python3-brotli libpango-1.0-0 libharfbuzz0b libpangoft2-1.0-0"
+  command = "sudo apt-get install -y libcairo2-dev libpango1.0-dev libgdk-pixbuf2.0-dev libffi-dev shared-mime-info"
