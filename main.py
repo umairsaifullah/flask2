@@ -64,17 +64,7 @@ def submit():
 
     print('Converting to PDF...')
    
-    # Convert docx to pdf using docx2pdf package
-    doc = Document('test_filled.docx')
-
-    # extract the text from the DOCX file
-    text = '\n'.join([p.text for p in doc.paragraphs])
-
-    # create an HTML document with the extracted text
-    html = '<html><body>{}</body></html>'.format(text)
-
-    # convert the HTML document to PDF using WeasyPrint
-    HTML(string=html).write_pdf('test_filled.pdf')
+    
 
    
   
