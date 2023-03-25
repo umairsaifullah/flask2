@@ -68,7 +68,7 @@ def submit():
 
    
   
-    filename = 'test_filled.pdf'
+    filename = 'test_filled.docx'
     
     
     return send_file(filename, as_attachment=True)
