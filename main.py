@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, send_file ,Response
-from docx2pdf import convert
 import docx
+from docx import Document
+from weasyprint import HTML
 from docx.enum.text import WD_LINE_SPACING
 from docx.shared import Pt
 from num2words import num2words
@@ -64,7 +65,16 @@ def submit():
     print('Converting to PDF...')
    
     # Convert docx to pdf using docx2pdf package
-    convert("test_filled.docx", "test_filled.pdf")
+    doc = Document('test_filled.docx')
+
+    # extract the text from the DOCX file
+    text = '\n'.join([p.text for p in doc.paragraphs])
+
+    # create an HTML document with the extracted text
+    html = '<html><body>{}</body></html>'.format(text)
+
+    # convert the HTML document to PDF using WeasyPrint
+    HTML(string=html).write_pdf('test_filled.pdf')
 
    
   
