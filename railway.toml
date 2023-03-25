@@ -1,0 +1,10 @@
+[phase.setup]
+  aptPkgs = ['sudo apt-get update && sudo apt-get install libreoffice']
+
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
