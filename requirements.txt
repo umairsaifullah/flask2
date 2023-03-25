@@ -4,3 +4,6 @@ num2words==0.5.12
 weasyprint>=58.1
 docx2pdf>=0.1.8
 python-docx
+CairoSVG==2.5.2
+WeasyPrint>=53.1
+pycairo==1.20.1
