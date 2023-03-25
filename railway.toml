@@ -1,16 +1,15 @@
 [phase.setup]
-  aptPkgs = ['...', 'libreoffice', 'unoconv']
-  nixPkgs = ['...', 'libreoffice', 'unoconv']
+  aptPkgs = ['...', 'libreoffice']
+  nixPkgs = ['...', 'libreoffice']
   commands = [
   "apt-get update",
-  "apt-get install -y libreoffice",
-  "apt-get install -y unoconv"
+  "apt-get install -y libreoffice"
 ]
   
 [build]
 builder = "NIXPACKS"
 # Install dependencies
-command = "apt-get update && apt-get install -y libreoffice unoconv"
+command = "apt-get update && apt-get install -y libreoffice"
 
 [deploy]
 restartPolicyType = "ON_FAILURE"
@@ -19,4 +18,4 @@ restartPolicyMaxRetries = 10
 [[services]]
   internal_port = 6302
   protocol = "http"
-  command = "apt-get update && apt-get install -y unoconv"
+  command = "apt-get update && apt-get install -y libreoffice"
