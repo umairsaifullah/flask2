@@ -1,15 +1,18 @@
 [phase.setup]
-  aptPkgs = ['...', 'libreoffice']
+  aptPkgs = ['...', 'libreoffice', 'gir1.2-gtk-3.0']
   nixPkgs = ['...', 'libreoffice']
   commands = [
   "apt-get update",
-  "apt-get install -y libreoffice"
+  "apt-get install -y libreoffice",
+  "apt-get install -y gir1.2-gtk-3.0"
 ]
   
 [build]
 builder = "NIXPACKS"
 # Install dependencies
-command = "apt-get update && apt-get install -y libreoffice"
+command = "apt-get update && apt-get install -y libreoffice gir1.2-gtk-3.0"
+
+
 
 [deploy]
 restartPolicyType = "ON_FAILURE"
@@ -18,4 +21,4 @@ restartPolicyMaxRetries = 10
 [[services]]
   internal_port = 6302
   protocol = "http"
-  command = "apt-get update && apt-get install -y libreoffice"
+  command = "apt-get update && apt-get install -y libreoffice gir1.2-gtk-3.0"
