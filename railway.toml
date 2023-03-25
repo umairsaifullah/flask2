@@ -1,7 +1,5 @@
 [phase.setup]
   aptPkgs = ['...', 'libreoffice']
-  aptPkgs = ["...", "libreoffice"]
-  nixPkgs = ["...", "libreoffice"]
   nixPkgs = ['...', 'libreoffice']
   
 [build]
