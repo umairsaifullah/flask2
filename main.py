@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, send_file ,Response
 import PyPDF2
-from docx2pdf import convert
+import subprocess
 import docx
 from docx.enum.text import WD_LINE_SPACING
 from docx.shared import Pt
@@ -15,6 +15,12 @@ print('Starting...')
 def index():
     print('inside indx...')
     return render_template('index.html')
+
+def convert(docx_file):
+    pdf_file = docx_file.split('.')[0] + '.pdf'
+    command = ['unoconv', '-f', 'pdf', docx_file]
+    subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    return pdf_file
 
 @app.route('/submit', methods=['GET', 'POST'])
 def submit():
@@ -66,20 +72,9 @@ def submit():
     # Convert docx to pdf using docx2pdf package
     convert("test_filled.docx")
 
-    # Open the generated pdf file
-    # Open the input pdf file
-    with open('test_filled.pdf', 'rb') as pdf_file:
-      pdf_reader = PyPDF2.PdfReader(pdf_file)
-      # Create a new pdf file to write the converted data
-      with open('converted.pdf', 'wb') as new_pdf_file:
-          pdf_writer = PyPDF2.PdfWriter()
-          # Iterate through each page of the pdf and add it to the new file
-          for page in range(len(pdf_reader.pages)):
-               pdf_writer.add_page(pdf_reader.pages[page])
-           # Write the new file
-          pdf_writer.write(new_pdf_file)
+   
   
-    filename = 'converted.pdf'
+    filename = 'test_filled.pdf'
     
     
     return send_file(filename, as_attachment=True)
