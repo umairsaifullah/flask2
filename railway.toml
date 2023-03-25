@@ -1,6 +1,6 @@
 [phase.setup]
-  aptPkgs = ['...', 'libreoffice']
-  nixPkgs = ['...', 'libreoffice']
+  aptPkgs = ['...', 'libreoffice', 'unoconv']
+  nixPkgs = ['...', 'libreoffice', 'unoconv']
   
 [build]
 builder = "NIXPACKS"
