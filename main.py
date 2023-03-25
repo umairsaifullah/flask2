@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, send_file ,Response
 import docx
-from docx import Document
-from weasyprint import HTML
 from docx.enum.text import WD_LINE_SPACING
 from docx.shared import Pt
 from num2words import num2words
@@ -63,9 +61,6 @@ def submit():
     doc.save('test_filled.docx')
 
     print('Converting to PDF...')
-   
-    
-
    
   
     filename = 'test_filled.docx'
