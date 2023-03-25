@@ -1,6 +1,8 @@
 [phase.setup]
-  aptPkgs = ['sudo apt-get update && sudo apt-get install libreoffice']
-  nixPkgs = ['libreoffice']
+  aptPkgs = ['...', 'libreoffice']
+  aptPkgs = ["...", "libreoffice"]
+  nixPkgs = ["...", "libreoffice"]
+  nixPkgs = ['...', 'libreoffice']
   
 [build]
 builder = "NIXPACKS"
